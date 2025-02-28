@@ -104,8 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 9210732655242887600, guid: 157134227be566e42a180c1475f20bb8, type: 3}
   firePoint: {fileID: 8557332324326703796}
-  fireballSpeed: 8
-  shootInterval: 1
+  fireballSpeed: 7
+  shootInterval: 1.2
 --- !u!61 &7886468022683851973
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00609228, y: -0.13762656}
+  m_Offset: {x: -0.00609228, y: -0.13040641}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,7 +150,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.427467, y: 0.5434784}
+  m_Size: {x: 0.32978934, y: 0.41929173}
   m_EdgeRadius: 0
 --- !u!114 &415898238422603257
 MonoBehaviour:

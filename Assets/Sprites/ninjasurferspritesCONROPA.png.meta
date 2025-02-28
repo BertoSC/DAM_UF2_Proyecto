@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ninjasurferspritesCONROPA_0: 6245301279052565610
+      ninjasurferspritesCONROPA_1: 3739133484889780173
+      ninjasurferspritesCONROPA_2: 4194689487110216032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

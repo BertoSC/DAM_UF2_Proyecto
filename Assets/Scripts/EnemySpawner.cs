@@ -30,11 +30,18 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyToSpawn = enemyPrefabs[randomIndex];
 
         // Posición de spawn en el lado derecho de la pantalla
+         float spawnX = 12f; // Ajusta este valor según el tamaño de tu pantalla
+        float spawnY = Random.Range(spawnHeightMin, spawnHeightMax); // Posición aleatoria en Y
+        Vector2 spawnPos = new Vector2(spawnX, spawnY);
+        // Instanciar el enemigo seleccionado
+        Instantiate(enemyToSpawn, spawnPos, Quaternion.identity);
+
+        /*   // Posición de spawn en el lado derecho de la pantalla
         Vector3 spawnPos = new Vector3(Camera.main.ViewportToWorldPoint(new Vector3(1.2f, 0, 0)).x, 
                                        Random.Range(spawnHeightMin, spawnHeightMax), 
                                        0);
 
         // Instanciar el enemigo seleccionado
-        Instantiate(enemyToSpawn, spawnPos, Quaternion.identity);
+        Instantiate(enemyToSpawn, spawnPos, Quaternion.identity);*/
     }
 }

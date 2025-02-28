@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ninjasurfersprites3_0: 6092625132945318357
+      ninjasurfersprites3_1: 1885428067120649327
+      ninjasurfersprites3_2: -2954077324859751704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
