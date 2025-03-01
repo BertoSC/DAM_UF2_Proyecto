@@ -3,10 +3,12 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public float speed = 6f; // Velocidad de la bola de fuego
-    public float lifetime = 3f; // Tiempo antes de que desaparezca
+    public float lifetime = 3f;
+    public AudioClip firesound; 
 
     void Start()
     {
+        AudioSource.PlayClipAtPoint(firesound, transform.position, 1f); // Reproduce el sonido de la bola de fuego
         // Destruye la bola de fuego después de un tiempo
         Destroy(gameObject, lifetime);
     }

@@ -5,18 +5,22 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance; // Singleton para acceder desde otros scripts
-    public TextMeshProUGUI scoreText;
+    
     private int score = 0; 
     private float timer = 0f;
 
-    private void Awake()
+     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
+        score = 0;
+       
+    }
+
+    void Awake() {
+        if(instance == null){
+            instance = this;    
+            DontDestroyOnLoad(gameObject); // Evitar que el objeto se destruya al cambiar de escena
+        } else {
+            // Si ya existe una instancia, destruimos el nuevo GameManager para mantener la singularidad
             Destroy(gameObject);
         }
     }
@@ -26,14 +30,26 @@ public class ScoreManager : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 1f)
         {
-            AddScore(100); // Suma 100 puntos por segundo
+            AddScore(5); 
             timer = 0f;
         }
     }
 
-    public void AddScore(int amount)
+     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "Score: " + score.ToString(); 
+       
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+      
+    }
+
+    public int GetScore()
+{
+    return score;
+}
+
 }

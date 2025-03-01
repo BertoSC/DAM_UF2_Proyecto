@@ -5,6 +5,8 @@ public class Shuriken : MonoBehaviour
     public float speed = 10f; // Velocidad del shuriken
     public float lifetime = 3f; // Tiempo antes de que desaparezca
 
+    public AudioClip impactSound;
+
     void Start()
     {
         Destroy(gameObject, lifetime); // Eliminar el shuriken después de un tiempo
@@ -24,6 +26,9 @@ public class Shuriken : MonoBehaviour
         if (enemyScript != null)
         {
             enemyScript.Die();
+            AudioSource.PlayClipAtPoint(impactSound, transform.position, 2f);
+            
+            ScoreManager.instance.AddScore(25);
         }
         else
         {

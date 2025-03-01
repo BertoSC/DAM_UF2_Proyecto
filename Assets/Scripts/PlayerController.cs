@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float fastFallMultiplier = 2f; 
     private Rigidbody2D rb;
     private bool isGrounded = false; 
+
+    private bool isJumping = false;
     private bool isFastFalling = false;
     private SpriteRenderer spriteRenderer; 
     
@@ -17,17 +19,25 @@ public class PlayerController : MonoBehaviour
     public Sprite downSprite;   
 
     public GameObject rushAnimation;
-
-
     public GameObject shurikenPrefab; // Prefab del shuriken
     public Transform puntoDeDisparo; // Posición desde donde se disparará
-    public float shurikenSpeed = 10f; // Velocidad del shuriken
+    public float shurikenSpeed = 10f;
+    
+   
+    public AudioClip jumpSound; 
+    public AudioClip waterSound;
+    public AudioClip shurikenSound;
+    public AudioClip impactSound;
+    
+     // Velocidad del shuriken
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         spriteRenderer = GetComponent<SpriteRenderer>(); 
         rb.gravityScale = 0; 
+            
         if (rushAnimation != null)
         {
             rushAnimation.SetActive(false);
@@ -48,22 +58,22 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical"); 
         MoveVertical(verticalInput);
 
-        // Si el Player está en el suelo y presiona la tecla de salto, se ejecuta la acción 
+        // Saltar 
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+            Jump();          
         }
 
-
-        // Caída rápida si está en el aire y se presiona hacia abajo
+        // Caída rápida 
 
         if (!isGrounded && verticalInput < 0)
         {
             FastFall();
             spriteRenderer.sprite = downSprite; 
         }
-
+     
         // Simulación de gravedad manual
 
         if (!isGrounded)
@@ -88,7 +98,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (isGrounded)
         {
-            spriteRenderer.sprite = normalSprite;
+            spriteRenderer.sprite = normalSprite;          
+                   
         }
 
         // Control de la animación de la base de la tabla
@@ -98,6 +109,8 @@ public class PlayerController : MonoBehaviour
             rushAnimation.SetActive(isGrounded); 
         }
 
+        // Control de lanzamiento de shurikens
+
         if (Input.GetKeyDown(KeyCode.F))
              {
         LanzarShuriken();
@@ -105,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
     }
      
-    // Control para lanzar shurikens 
+    // Método para lanzar shurikens 
     void LanzarShuriken(){
    
     GameObject shuriken = Instantiate(shurikenPrefab, puntoDeDisparo.position, Quaternion.identity);
@@ -113,17 +126,20 @@ public class PlayerController : MonoBehaviour
   
     Rigidbody2D rb = shuriken.GetComponent<Rigidbody2D>();
     rb.linearVelocity = new Vector2(shurikenSpeed, 0);
+     AudioSource.PlayClipAtPoint(shurikenSound, transform.position);
        
 }
 
-    // Control del salto > aplica una velocidad lineal positiva y controla los vlaores del sprite y del control de suelo
+    // Métopdp de salto > aplica una velocidad lineal positiva y controla los valores del sprite y del control de suelo
 
     void Jump()
     {
         
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isGrounded = false; 
-        spriteRenderer.sprite = jumpSprite; 
+        isJumping = true;
+        spriteRenderer.sprite = jumpSprite;
+        
     }
 
     // Control del movimiento vertical > según la entrada del jugador
@@ -135,7 +151,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(movement);
     }
 
-    // Control del movimiento horizontal> mueve al jugador hacia la izquierda o derecha según la entrada
+    // Control del movimiento horizontal > mueve al jugador hacia la izquierda o derecha según la entrada
 
     void MoveHorizontal(float input)
     {
@@ -154,19 +170,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // Controles de detección de colisiones con el suelo
+    // Controles de detección de colisiones con el agua
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true; 
-            isFastFalling = false;
+            AudioSource.PlayClipAtPoint(waterSound, transform.position);
+             isJumping = false;
         }
 
-       
-        
+            isFastFalling = false;    
     
-
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -188,6 +203,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Deadly"))
         {
             Destroy(gameObject);
+            SceneController.GameOver();
         }
      
     }
@@ -200,7 +216,9 @@ public class PlayerController : MonoBehaviour
         Enemy enemyScript = other.GetComponent<Enemy>();
         if (enemyScript != null)
         {
-            enemyScript.Die(); // Ejecuta la animación de muerte y, tras un retraso, destruye al enemigo
+            enemyScript.Die();
+            AudioSource.PlayClipAtPoint(impactSound, transform.position, 2f);                   
+            ScoreManager.instance.AddScore(100); // Ejecuta la animación de muerte y, tras un retraso, destruye al enemigo
         }
         else
         {
@@ -216,6 +234,7 @@ public class PlayerController : MonoBehaviour
               
             // Si el enemigo no tiene el script, se destruye directamente (opcional)
             Destroy(gameObject);
+            SceneController.GameOver();
         }
         
     
@@ -223,6 +242,7 @@ public class PlayerController : MonoBehaviour
     if (other.CompareTag("Deadly"))
     {
         Destroy(gameObject);
+        SceneController.GameOver();
     }
 
     

@@ -190,3 +190,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifetime: 3
+  impactSound: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}

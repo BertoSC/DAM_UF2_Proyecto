@@ -11,6 +11,7 @@ TagManager:
   - Deadly
   - Enemy
   - Fireball
+  - Score
   layers:
   - Default
   - TransparentFX
