@@ -150,7 +150,3 @@
 >El surfista cuenta con una animación de contacto/velocidad con el agua que se activa cuando está sobre el mar.
 
 >El shuriken cuenta con una animación y una estela azul. 
-
-
-
-- ...
