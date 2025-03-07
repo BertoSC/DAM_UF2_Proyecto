@@ -150,3 +150,6 @@
 >El surfista cuenta con una animación de contacto/velocidad con el agua que se activa cuando está sobre el mar.
 
 >El shuriken cuenta con una animación y una estela azul. 
+
+- Efectos de partículas
+>Efectos de partículas para simular el avance de la ola y la espuma al romper en el agua
