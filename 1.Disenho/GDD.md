@@ -8,7 +8,7 @@
 - Concepto:
 >Vacation Ninja vs Cultists of Death es un juego de acción lateral protagonizado por un habilidoso ninja
 > que se ve inmerso en una de las peores pesadillas de cualquier persona: ¡el trabajo no le deja en paz ni en sus vacaciones!. 
->Ayuda a nuestro intrépido ninja a sobrevivir mientras surfea a través de una pantalla de scroll lateral infinito, escapando de una enorme ola de dimensiones desproporcionadas, en el que tendrá que esquivar y saltar obstáculos y trampas generadas aleatoriamente y lidiar con una orda de demonios voladores liderados por sus malvados archienemigos: los cultitas demoníacos y adoradores de la Muerte.  
+>Ayuda a nuestro intrépido ninja a sobrevivir mientras surfea a través de una pantalla de scroll lateral infinito, escapando de una enorme ola de dimensiones desproporcionadas, en el que tendrá que esquivar y saltar obstáculos y trampas generadas aleatoriamente y lidiar con una horda de demonios voladores liderados por sus malvados archienemigos: los cultitas demoníacos y adoradores de la Muerte.  
 
 - Género:
 > Acción, Runner, Plataformas, Shooter 2D 
