@@ -91,7 +91,7 @@
 
 >Gravedad (pero priorizando la diversión sobre el realismo)
 - Historia
->El juego nos narra la triste historia de un intrépido ninja, amante del surf,  que ve sus vacaciones interrumpidas por el ataque del sus archienemigos: los cultitas de la Muerte. Si se le quieren buscar los tres piés al gato, podrías pensar que es una alegoría de este sistema ultracapitalista y de los perniciosos ritmos vitales a los que nos vemos sometidos en nuestro día a día. Aunque, en realidad, sólo me parecía que era guay controlar a un ninja surfista matando demonios y brujos.   
+>El juego nos narra la triste historia de un intrépido ninja, amante del surf,  que ve sus vacaciones interrumpidas por el ataque de sus archienemigos: los cultitas de la Muerte. Si se le quieren buscar los tres piés al gato, podrías pensar que es una alegoría de este sistema ultracapitalista y de los perniciosos ritmos vitales a los que nos vemos sometidos en nuestro día a día. Aunque, en realidad, sólo me parecía que era guay controlar a un ninja surfista matando demonios y brujos.   
 - Personajes
 >NINJA: con la parte superior de su traje, pero en bermudas y una tabla de surf.
 > 
