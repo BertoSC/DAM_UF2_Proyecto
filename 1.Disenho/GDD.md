@@ -85,7 +85,7 @@
 ## ELEMENTOS DEL VIDEOJUEGO
 
 - Entorno:
-> El videojuego se desarrolla sobre el océano, con un paisaje de nubes cíclo que se repite constantemente en un scroll eterno. 
+> El videojuego se desarrolla sobre el océano, con un paisaje de nubes en un ciclo que se repite constantemente en un scroll eterno. 
 
 - Leyes físicas
 
