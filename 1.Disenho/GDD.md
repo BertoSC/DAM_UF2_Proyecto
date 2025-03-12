@@ -36,7 +36,7 @@
 > - El jugador puede conseguir más puntos derrotando enemigos. 
 > - Si el jugador derrota enemigos usando el DIVE ATACK, la recompensa de puntos será mayor.
 > - El jugador debe saltar y esquivar obstáculos y trampas portales que aparecerán de forma aleatoria desde el extremo derecho de la pantalla.
-> - Los obstáculos bloquean y ralentizan al jugador, pero algunos son trampas portales que suponen el FIN DE LA PARTIDA. 
+> - Los obstáculos bloquean y ralentizan al jugador, pero algunos son trampas mortales que suponen el FIN DE LA PARTIDA. 
 > - Los enemigos voladores aparecen en una altura aleatoria y siempre se mueven en el eje horizontal. 
 > - Algunos enemigos, que lanzan bolas de fuego, pueden aparecer en las plataformas aleatorias.
 > - El ninja morirá si impacta contra la ola, contra una trampa, contra un enemigo o una bola de fuego.
